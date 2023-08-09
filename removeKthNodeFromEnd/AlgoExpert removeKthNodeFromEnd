@@ -1,0 +1,22 @@
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def removeKthNodeFromEnd(head, k):
+    n = 1
+    current = head
+    right = head
+    while n <= k:
+        right = right.next
+        n += 1
+    if right is None:
+        head.value = head.next.value
+        head.next = head.next.next
+        return
+    while right.next is not None:
+        right = right.next
+        current = current.next
+    current.next = current.next.next
