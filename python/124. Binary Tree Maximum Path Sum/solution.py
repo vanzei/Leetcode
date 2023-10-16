@@ -19,7 +19,12 @@ class Solution:
 
             res[0] = max(res[0], root.val + maxL + maxR)
 
-            return root.val + maxL + maxR
+            return root.val + max(maxL , maxR)
         
         dfs(root)
         return res[0]
+        
+
+
+
+        
